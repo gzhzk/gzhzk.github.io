@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'projects.view': 'View project ↗',
       'project.nanodeer': 'A reference implementation for LLM agent runtime engineering: native ReAct loop, sandbox isolation, flat-file memory, and SSE streaming.',
       'project.alignsql': 'Qwen3-8B Text2SQL post-training from supervised fine-tuning through reinforcement learning.',
-      'project.tracewise': 'A skill for turning AI coding corrections into reusable experience cards and durable engineering knowledge.',
+      'project.pindou': 'A Codex skill that turns photos and memories into craftable fuse-bead keepsakes with adaptive grids, real palettes, and structural-growth GIFs.',
       'writing.kicker': 'SELECTED WRITING',
       'writing.title': 'Notes from the path to AGI.'
     },
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'projects.view': '查看项目 ↗',
       'project.nanodeer': 'LLM Agent 运行时工程的参考实现，包含原生 ReAct 循环、沙箱隔离、扁平文件记忆与 SSE 流式接口。',
       'project.alignsql': '从监督微调到强化学习的 Qwen3-8B Text2SQL Post-Training 实践。',
-      'project.tracewise': '将 AI 编程中的纠错转化为可复用经验卡片与持久工程知识的 Skill。',
+      'project.pindou': '将照片与记忆转化为可实际制作的拼豆纪念品，支持自适应网格、真实色板与逐豆生长 GIF。',
       'writing.kicker': '精选文章',
       'writing.title': '通往 AGI 路上的笔记。'
     }
