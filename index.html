@@ -1,198 +1,58 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Zekai Huang - Agent Harness · Post-Training · LLM Systems</title><meta name="author" content="Zekai Huang"><meta name="copyright" content="Zekai Huang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="SCUT &#39;28 undergraduate building Agent Harness and Post-Training systems. Writing about LLMs, Agents, RLHF, and engineering practice.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zekai Huang">
-<meta property="og:url" content="https://gzhzk.github.io/index.html">
-<meta property="og:site_name" content="Zekai Huang">
-<meta property="og:description" content="SCUT &#39;28 undergraduate building Agent Harness and Post-Training systems. Writing about LLMs, Agents, RLHF, and engineering practice.">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gzhzk.github.io/images/fzd.jpg">
-<meta property="article:author" content="Zekai Huang">
-<meta property="article:tag" content="LLM, Agent Harness, Post-Training, RLHF, AI Engineering">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gzhzk.github.io/images/fzd.jpg"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Zekai Huang",
-  "alternateName": [
-    "Agent Harness · Post-Training · LLM Systems",
-    "gzhzk.github.io"
-  ],
-  "url": "https://gzhzk.github.io/"
-}</script><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="https://gzhzk.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Zekai Huang — exploring agents, multimodal video and post-training.">
+<meta name="theme-color" content="#ffffff"><title>Zekai Huang · Personal Homepage</title>
+<style>
+:root{--ink:#172d42;--text:#61768a;--blue:#3779b4;--line:#e4ecf3;--light:#f4f8fc}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:#fff;color:var(--ink);font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #87b5df;outline-offset:5px}.wrap{width:min(1120px,100% - 88px);margin:auto}.nav{height:85px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:15px;font-weight:750;letter-spacing:-.03em}.brand span{color:#5589b6}.navlinks{display:flex;gap:29px;font-size:12px;color:#73879a}.navlinks a{transition:color .2s}.navlinks a:hover{color:#236ca6}.intro{display:grid;grid-template-columns:1.15fr 1fr;align-items:end;gap:65px;padding:68px 0 43px}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:650;color:#7995ae}.intro h1{font-size:clamp(45px,6.4vw,80px);letter-spacing:-.065em;line-height:1.08;font-weight:600;margin:17px 0 12px;white-space:nowrap}.intro .subtitle{font-size:15px;letter-spacing:.04em;color:#5c87ad;margin:0}.bio{font-size:14px;line-height:1.95;color:var(--text);margin:0 0 2px;max-width:410px}.bio strong{font-weight:550;color:#365e7e}.intro-links{display:flex;gap:24px;font-size:12px;font-weight:650;color:#3679ae;margin-top:18px}.intro-links a{display:inline-flex;gap:8px;align-items:center}.intro-links span{transition:transform .2s}.intro-links a:hover span{transform:translate(2px,-2px)}.landscape{margin:0;position:relative;height:252px;border-radius:4px;overflow:hidden;background:#e9f2f8}.landscape img{width:100%;height:100%;object-fit:cover;object-position:50% 54%;transition:transform 1s ease}.landscape:hover img{transform:scale(1.025)}.landscape:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(22,53,79,.3),transparent 60%);pointer-events:none}.landscape figcaption{position:absolute;bottom:19px;left:23px;color:#fff;z-index:1;font-size:11px;letter-spacing:.08em}.landscape .photo-number{position:absolute;right:23px;bottom:19px;z-index:1;color:rgba(255,255,255,.8);font-size:10px;letter-spacing:.12em}.section{padding:58px 0}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:22px}.section-head h2{margin:0;font-weight:600;font-size:21px;letter-spacing:-.04em}.section-head .aside{font-size:11px;color:#98aabc}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{position:relative;display:flex;flex-direction:column;min-height:265px;padding:24px 25px 19px;border:1px solid #dce8f3;border-radius:12px;background:linear-gradient(145deg,#eaf4fc 0%,#f3f6fc 52%,#fff 100%);transition:border-color .2s,transform .2s,box-shadow .2s;overflow:hidden}.card:nth-child(2){background:linear-gradient(145deg,#eaf4fa,#f3f9fc 52%,#fff)}.card:nth-child(3){background:linear-gradient(145deg,#edf3ff,#f6f6fd 52%,#fff)}.card:hover,.card:focus-within{transform:translateY(-4px);border-color:#9fc7e3;box-shadow:0 14px 30px rgba(43,89,126,.09)}.card-num{font-size:10px;color:#7598b5;letter-spacing:.11em}.card h3{font-size:18px;letter-spacing:-.035em;font-weight:600;margin:16px 0 10px}.card p{font-size:13px;line-height:1.85;color:#6c8398;margin:0;max-width:270px}.card-art{height:63px;display:flex;align-items:center;justify-content:flex-end;margin-top:auto;color:#7ba6c8}.card-art svg{width:104px;height:42px;transition:transform .3s}.card:hover .card-art svg{transform:translateX(3px)}.card-footer{border-top:1px solid rgba(136,173,202,.23);padding-top:13px;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#94a9b9}.card-footer a{font-size:11px;color:#477ca5;font-weight:650}.card-footer a:after{content:'';position:absolute;inset:0;border-radius:12px}.card:has(.card-footer a){cursor:pointer}.card-footer a:focus-visible{outline:none}.card:focus-within{outline:2px solid #84b8de;outline-offset:3px}.now{display:grid;grid-template-columns:180px 1fr;gap:40px;border-top:1px solid var(--line);padding:30px 0 36px}.now h2{font-size:13px;font-weight:600;margin:2px 0;color:#4b708d}.now p{font-size:13px;line-height:1.95;color:#7a8d9d;margin:0;max-width:730px}.now strong{color:#506f86;font-weight:550}.thinking{border-top:1px solid var(--line);display:grid;grid-template-columns:180px 1fr;gap:40px;padding-top:48px;padding-bottom:58px}.thinking-label h2{font-size:21px;letter-spacing:-.04em;font-weight:600;margin:0 0 10px}.thinking-label span{font-size:9px;letter-spacing:.15em;color:#a0b0bf}.thinking-body{max-width:720px}.thinking-body p{font-size:14px;color:#6e8192;line-height:2.05;margin:0}.thinking-body p+p{margin-top:16px}.footer{border-top:1px solid var(--line);padding:25px 0 35px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#a0afbc}.footer a{color:#7d98ad}.footer a:hover{color:#3679ae}.footer-links{display:flex;gap:21px}@media(max-width:800px){.wrap{width:calc(100% - 44px)}.intro{gap:35px;padding-top:48px}.intro h1{font-size:49px}.bio{font-size:13px}.cards{gap:12px}.card{padding:21px 18px}.card h3{font-size:17px}.card p{font-size:12px}.now,.thinking{grid-template-columns:130px 1fr;gap:28px}.landscape{height:222px}}@media(max-width:620px){.nav{height:70px}.navlinks{gap:18px;font-size:11px}.navlinks .extra{display:none}.intro{grid-template-columns:1fr;gap:22px;padding:42px 0 30px}.intro h1{font-size:54px;margin-bottom:10px}.bio{max-width:none;font-size:14px}.intro .subtitle{font-size:14px}.intro-links{margin-top:13px}.landscape{height:210px}.landscape figcaption{left:16px;bottom:16px;font-size:10px}.landscape .photo-number{right:16px;bottom:16px}.section{padding:39px 0}.section-head .aside{font-size:10px}.cards{grid-template-columns:1fr;gap:13px}.card{min-height:0;padding:22px}.card p{font-size:13px;max-width:none}.card-art{height:44px;margin-top:8px}.card h3{margin-top:12px}.now,.thinking{grid-template-columns:1fr;gap:15px}.thinking{padding-top:35px;padding-bottom:42px}.thinking-label{display:flex;gap:18px;align-items:baseline}.thinking-label h2{margin:0}.thinking-body p{font-size:14px}.now{padding:26px 0}.footer{padding-bottom:26px}.section-head h2,.thinking-label h2{font-size:20px}}@media(max-width:360px){.intro h1{font-size:47px}.navlinks{gap:13px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.card:hover,.card:focus-within{transform:none}}
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
-        }
-      }
+#language-toggle{font:inherit;font-size:11px;color:#4f7c9f;background:#f2f7fc;border:1px solid #d9e7f2;border-radius:6px;padding:6px 9px;cursor:pointer;white-space:nowrap;transition:background .2s}#language-toggle:hover{background:#e5f0f9}#language-toggle:focus-visible{outline:3px solid #87b5df;outline-offset:3px}html[lang="en"] .card h3{font-size:17px}html[lang="en"] .card{min-height:285px}html[lang="en"] .card p{line-height:1.75}.navlinks{align-items:center}@media(max-width:620px){.navlinks{gap:13px}html[lang="en"] .card{min-height:0}html[lang="en"] .navlinks{gap:11px;font-size:10px}.thinking-label h2{line-height:1.35}}@media(prefers-reduced-motion:reduce){#language-toggle{transition:none}}
+</style>
+</head><body><div class="wrap">
+<header><nav class="nav" aria-label="Main navigation"><a class="brand" href="#top">zekai<span>.</span>felix</a><div class="navlinks"><a href="#interests" data-i18n="t0">Explore</a><a href="#thinking" data-i18n="t1">Reflections</a><a class="extra" href="https://gzhzk.github.io/archives/" target="_blank" rel="noopener noreferrer" data-i18n="t2">Writing ↗</a><a href="https://github.com/gzhzk" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" id="language-toggle" aria-label="切换为中文">中文</button></div></nav></header>
+<main id="top"><section class="intro" aria-labelledby="name"><div><div class="eyebrow">SCUT '28 · AI / SYSTEMS / TRAINING</div><h1 id="name">Zekai Huang<span style="color:#4f8abe">.</span></h1><p class="subtitle" data-i18n="t3">Think, build, try, learn.</p></div><div><p class="bio" data-i18n="t4">An undergraduate at South China University of Technology, exploring <strong>agents, multimodal video and post-training</strong>. I learn how systems work by building, gathering feedback and making tradeoffs. My goal is to work as an AI application algorithm engineer at an internet company during my undergraduate studies.</p><div class="intro-links"><a href="#interests" data-i18n="t5">What I’m exploring <span aria-hidden="true">↘</span></a><a href="https://gzhzk.github.io/archives/" target="_blank" rel="noopener noreferrer" data-i18n="t6">Read my notes <span aria-hidden="true">↗</span></a></div></div></section>
+<figure class="landscape"><img src="/images/city_lake.png" alt="A quiet lake and the city skyline beyond" fetchpriority="high"><figcaption data-i18n="t7">A little space to keep exploring.</figcaption><span class="photo-number" aria-hidden="true">01 / A MOMENT OF QUIET</span></figure>
+<section class="section" id="interests"><div class="section-head"><h2 data-i18n="t8">What I’m exploring</h2><span class="aside" data-i18n="t9">From models to systems, grounded in real problems.</span></div><div class="cards">
+<article class="card"><div class="card-num">01 / AGENTS</div><h3 data-i18n="t10">Agents & Systems</h3><p data-i18n="t11">How can context, tools and feedback help an agent complete a task? I explore this through runtime implementations.</p><div class="card-art" aria-hidden="true"><svg viewBox="0 0 110 44" fill="none"><path d="M21 22H49M63 22H91M56 15V6M56 29V38" stroke="currentColor" stroke-dasharray="3 3"/><circle cx="16" cy="22" r="5" fill="#fff" stroke="currentColor"/><circle cx="56" cy="22" r="7" fill="#dceefa" stroke="currentColor"/><rect x="91" y="17" width="10" height="10" rx="2" fill="#fff" stroke="currentColor"/><circle cx="56" cy="5" r="2" fill="currentColor"/><circle cx="56" cy="39" r="2" fill="currentColor"/></svg></div><div class="card-footer"><span data-i18n="t12">Context · Tools · Runtime</span><a href="https://github.com/gzhzk/nanodeer" target="_blank" rel="noopener noreferrer" aria-label="View NanoDeer project">NanoDeer ↗</a></div></article>
+<article class="card"><div class="card-num">02 / MULTIMODAL</div><h3 data-i18n="t13">Multimodal Video Modules</h3><p data-i18n="t14">Building and improving algorithm modules for video understanding, intelligent editing and dubbing, visual restoration and enhancement.</p><div class="card-art" aria-hidden="true"><svg viewBox="0 0 110 44" fill="none"><rect x="9" y="8" width="28" height="27" rx="3" stroke="currentColor"/><rect x="41" y="8" width="28" height="27" rx="3" stroke="currentColor"/><rect x="73" y="8" width="28" height="27" rx="3" stroke="currentColor"/><path d="M14 27l6-7 5 5 4-4 4 6M46 27l6-7 5 5 4-4 4 6M78 27l6-7 5 5 4-4 4 6" stroke="currentColor"/><circle cx="29" cy="15" r="2" fill="currentColor"/><circle cx="61" cy="15" r="2" fill="currentColor"/><circle cx="93" cy="15" r="2" fill="currentColor"/></svg></div><div class="card-footer"><span data-i18n="t15">Understand · Process · Enhance</span><span data-i18n="t16">Internship work</span></div></article>
+<article class="card"><div class="card-num">03 / POST-TRAINING</div><h3 data-i18n="t17">Post-Training & Representation</h3><p data-i18n="t18">Exploring fine-tuning and multimodal representations, with an interest in how evaluation can reveal meaningful improvements.</p><div class="card-art" aria-hidden="true"><svg viewBox="0 0 110 44" fill="none"><rect x="12" y="13" width="21" height="18" rx="3" stroke="currentColor"/><rect x="45" y="9" width="21" height="26" rx="3" stroke="currentColor"/><rect x="78" y="13" width="21" height="18" rx="3" stroke="currentColor"/><path d="M33 22H45M66 22H78M22 35V40H88V35" stroke="currentColor" stroke-dasharray="3 3"/></svg></div><div class="card-footer"><span data-i18n="t19">Data · Training · Evaluation</span><a href="https://github.com/gzhzk/alignsql" target="_blank" rel="noopener noreferrer" aria-label="View AlignSQL project">AlignSQL ↗</a></div></article>
+</div></section>
+<section class="now" aria-labelledby="now-title"><h2 id="now-title" data-i18n="t20">Now</h2><p data-i18n="t21">My internship work involves <strong>multimodal video algorithm modules</strong>. Alongside that, I’m exploring agents and post-training, and following Jev and WeMM-Embedding.</p></section>
+<section class="section thinking" id="thinking"><div class="thinking-label"><h2 data-i18n="t22">Some reflections</h2><span>LEARNING BY DOING</span></div><div class="thinking-body"><p data-i18n="t23">Lately, I’ve become more interested in why a method works—and under what conditions. When studying agents, multimodal models or post-training, I keep asking: what goes in and comes out, what problem does each module solve, and would it still work in my setting? Understanding the mechanism helps me decide whether to change the model or first improve the data, context and processing flow.</p>
+<p data-i18n="t24">Much of my recent work has involved reading source code, orchestrating implementations and adapting open-source projects to business needs. These experiences are gradually helping me understand how complex systems grow from small modules, integrate into business workflows and deliver sustained value. My internship has also made me think about how to go deeper into specific problems within multimodal video algorithm modules. I think a useful approach is to start with a concrete problem, use realistic examples and controlled comparisons to understand what improves and where the method fails, then build on a solid small experiment toward a complete system.</p>
+<p data-i18n="t25">I enjoy looking for connections across fields. Could representations and indexing from retrieval and recommendation help a long-running agent recover information relevant to its current task? Could video examples that preserve evidence and corrections become a starting point for post-training smaller models to understand actions and changes in state? These remain open questions that I want to test through practice.</p>
+<p data-i18n="t26">AI helps me explore more broadly and implement ideas faster, but goals, tradeoffs and judgment remain my responsibility. Through experiments, feedback and refactoring, I hope to develop a stronger sense of what matters.</p></div></section>
+</main><footer class="footer"><span>© 2026 Zekai Huang</span><div class="footer-links"><a href="https://github.com/gzhzk" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://gzhzk.github.io/archives/" target="_blank" rel="noopener noreferrer" data-i18n="t2">Writing ↗</a></div></footer></div><script>
+(()=>{
+const dictionary={"t0": {"zh": "探索", "en": "Explore"}, "t1": {"zh": "思考", "en": "Reflections"}, "t2": {"zh": "文章 ↗", "en": "Writing ↗"}, "t3": {"zh": "多想、多做、边试、边学。", "en": "Think, build, try, learn."}, "t4": {"zh": "华南理工大学本科生，关注 <strong>Agent、多模态视频和模型后训练</strong>。喜欢从具体问题出发，在动手、反馈与取舍中理解系统。目标是在本科阶段进入互联网企业，从事 AI 应用算法工程师工作。", "en": "An undergraduate at South China University of Technology, exploring <strong>agents, multimodal video and post-training</strong>. I learn how systems work by building, gathering feedback and making tradeoffs. My goal is to work as an AI application algorithm engineer at an internet company during my undergraduate studies."}, "t5": {"zh": "正在探索 <span aria-hidden=\"true\">↘</span>", "en": "What I’m exploring <span aria-hidden=\"true\">↘</span>"}, "t6": {"zh": "读读笔记 <span aria-hidden=\"true\">↗</span>", "en": "Read my notes <span aria-hidden=\"true\">↗</span>"}, "t7": {"zh": "留一点空间，继续探索。", "en": "A little space to keep exploring."}, "t8": {"zh": "正在探索", "en": "What I’m exploring"}, "t9": {"zh": "从模型，到系统，再到具体问题。", "en": "From models to systems, grounded in real problems."}, "t10": {"zh": "Agent 与系统", "en": "Agents & Systems"}, "t11": {"zh": "如何组织上下文、工具和反馈，让模型真正完成任务？从运行时的实现中寻找答案。", "en": "How can context, tools and feedback help an agent complete a task? I explore this through runtime implementations."}, "t12": {"zh": "上下文 · 工具 · 运行时", "en": "Context · Tools · Runtime"}, "t13": {"zh": "多模态视频算法模块", "en": "Multimodal Video Modules"}, "t14": {"zh": "围绕视频理解、智能剪辑与配音、视觉修复和增强，构建并优化多模态视频算法模块。", "en": "Building and improving algorithm modules for video understanding, intelligent editing and dubbing, visual restoration and enhancement."}, "t15": {"zh": "理解 · 处理 · 增强", "en": "Understand · Process · Enhance"}, "t16": {"zh": "实习实践", "en": "Internship work"}, "t17": {"zh": "后训练与表征", "en": "Post-Training & Representation"}, "t18": {"zh": "持续探索微调和多模态表征，也关心如何通过评估判断改进是否有效。", "en": "Exploring fine-tuning and multimodal representations, with an interest in how evaluation can reveal meaningful improvements."}, "t19": {"zh": "数据 · 训练 · 评估", "en": "Data · Training · Evaluation"}, "t20": {"zh": "最近", "en": "Now"}, "t21": {"zh": "实习中实践<strong>多模态视频算法模块</strong>，同时继续探索 Agent 和后训练，近期也在关注 Jev 与 WeMM-Embedding。", "en": "My internship work involves <strong>multimodal video algorithm modules</strong>. Alongside that, I’m exploring agents and post-training, and following Jev and WeMM-Embedding."}, "t22": {"zh": "一些思考", "en": "Some reflections"}, "t23": {"zh": "这段时间，我越来越在意一项技术为什么有效、又在哪些条件下有效。看 Agent、多模态或后训练的新方法时，我习惯继续追问：输入输出是什么，关键模块解决了什么问题，换到自己的场景里还成立吗。理解机制之后，才更容易判断应该改模型，还是先改数据、上下文和处理流程。", "en": "Lately, I’ve become more interested in why a method works—and under what conditions. When studying agents, multimodal models or post-training, I keep asking: what goes in and comes out, what problem does each module solve, and would it still work in my setting? Understanding the mechanism helps me decide whether to change the model or first improve the data, context and processing flow."}, "t24": {"zh": "尽管这段时间做的多数是源码阅读、开发编排和开源项目的业务适配，但这些实践也让我逐渐理解，复杂系统如何从一个个小模块搭建起来，再嵌入业务体系，持续产生稳定收益。实习也让我开始思考，怎样在多模态视频算法模块中，把具体问题做深。我认为可以先找到一个具体问题，用贴近业务的样例和对照实验，弄清楚方法改善了什么、又在哪里失败；先把一个小实验做扎实，再逐步扩展到完整系统。", "en": "Much of my recent work has involved reading source code, orchestrating implementations and adapting open-source projects to business needs. These experiences are gradually helping me understand how complex systems grow from small modules, integrate into business workflows and deliver sustained value. My internship has also made me think about how to go deeper into specific problems within multimodal video algorithm modules. I think a useful approach is to start with a concrete problem, use realistic examples and controlled comparisons to understand what improves and where the method fails, then build on a solid small experiment toward a complete system."}, "t25": {"zh": "我也喜欢寻找不同方向之间的联系。检索和推荐中的表征、索引，能否帮助长程 Agent 找回当前任务需要的信息？视频理解中保留证据与纠错的样例，能否成为小模型学习动作与状态变化的后训练起点？这些还没有定论，但值得继续动手验证。", "en": "I enjoy looking for connections across fields. Could representations and indexing from retrieval and recommendation help a long-running agent recover information relevant to its current task? Could video examples that preserve evidence and corrections become a starting point for post-training smaller models to understand actions and changes in state? These remain open questions that I want to test through practice."}, "t26": {"zh": "AI 能帮我扩大搜索范围、加快实现，但目标、取舍和判断仍要自己负责。我希望在尝试、反馈和重构中，逐渐形成自己的判断力。", "en": "AI helps me explore more broadly and implement ideas faster, but goals, tradeoffs and judgment remain my responsibility. Through experiments, feedback and refactoring, I hope to develop a stronger sense of what matters."}};
+const button=document.getElementById('language-toggle');
+function apply(language){
+ const isChinese=language==='zh';
+ document.documentElement.lang=isChinese?'zh-CN':'en';
+ document.querySelectorAll('[data-i18n]').forEach(element=>{
+  const entry=dictionary[element.dataset.i18n];
+  if(entry) element.innerHTML=entry[isChinese?'zh':'en'];
+ });
+ button.textContent=isChinese?'EN':'中文';
+ button.setAttribute('aria-label',isChinese?'Switch to English':'切换为中文');
+ document.title=isChinese?'Zekai Huang · 个人主页':'Zekai Huang · Personal Homepage';
+ document.querySelector('nav').setAttribute('aria-label',isChinese?'主导航':'Main navigation');
+ document.querySelector('.landscape img').alt=isChinese?'宁静的湖面与远处的城市天际线':'A quiet lake and the city skyline beyond';
+ const labels=isChinese?['查看 NanoDeer 项目','查看 AlignSQL 项目']:['View NanoDeer project','View AlignSQL project'];
+ document.querySelectorAll('.card-footer a').forEach((link,i)=>link.setAttribute('aria-label',labels[i]));
+ try{localStorage.setItem('zekai-home-language',language)}catch{}
+}
+let saved='en';try{if(localStorage.getItem('zekai-home-language')==='zh')saved='zh'}catch{}
+apply(saved);
+button.addEventListener('click',()=>apply(document.documentElement.lang==='en'?'zh':'en'));
+})();
+</script></body></html>
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
 
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
-        
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Zekai Huang',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'home'
-}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/fzd.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/#projects"><i class="fa-fw fas fa-code-branch"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/gzhzk"><i class="fa-fw fab fa-github"></i><span> GitHub</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url(/images/city_lake.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/images/Kai.png" alt="Logo"><span class="site-name">Zekai Huang</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/#projects"><i class="fa-fw fas fa-code-branch"></i><span> Projects</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://github.com/gzhzk"><i class="fa-fw fab fa-github"></i><span> GitHub</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title"><span>Building Agent Harness and</span><span class="home-hero-title-line">Post-Training Systems</span></h1><div class="home-hero-role" id="site-subtitle">Zekai Huang · SCUT '28 Undergraduate</div><div class="home-hero-actions"><a class="home-hero-button primary" href="#projects" data-i18n="hero.projects">Explore Projects</a><a class="home-hero-button" href="#selected-writing" data-i18n="hero.notes">Read Notes</a></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/gzhzk" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #181717;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><section class="home-profile-card" aria-labelledby="home-profile-title"><div class="home-profile-copy"><div class="section-kicker" data-i18n="profile.kicker">CURRENTLY BUILDING</div><h2 id="home-profile-title" data-i18n="profile.title">Systems for capable, reliable LLM agents.</h2><p data-i18n="profile.body">I work across agent runtime engineering and post-training, with a focus on simple architectures, measurable behavior, and lessons earned from real implementations.</p><div class="focus-tags" aria-label="Current focus"><span>Agent Harness</span><span>Post-Training</span><span>Reasoning</span><span>RLHF</span></div></div><a class="home-profile-link" href="https://github.com/gzhzk" target="_blank" rel="noopener"><i class="fab fa-github"></i><span data-i18n="profile.github">Follow the work on GitHub</span></a></section><section class="home-projects" id="projects" aria-labelledby="projects-title"><div class="section-heading"><div><div class="section-kicker" data-i18n="projects.kicker">SELECTED PROJECTS</div><h2 id="projects-title" data-i18n="projects.title">Built to learn, tested by use.</h2></div><a class="section-link" href="https://github.com/gzhzk?tab=repositories" target="_blank" rel="noopener" data-i18n="projects.all">View all repositories</a></div><div class="project-grid"><a class="project-card" href="https://github.com/gzhzk/nanodeer" target="_blank" rel="noopener"><div class="project-card-top"><i class="fas fa-diagram-project"></i><span>AGENT RUNTIME</span></div><h3>NanoDeer</h3><p data-i18n="project.nanodeer">A reference implementation for LLM agent runtime engineering: native ReAct loop, sandbox isolation, flat-file memory, and SSE streaming.</p><div class="project-arrow" data-i18n="projects.view">View project ↗</div></a><a class="project-card" href="https://github.com/gzhzk/alignsql" target="_blank" rel="noopener"><div class="project-card-top"><i class="fas fa-chart-line"></i><span>POST-TRAINING</span></div><h3>AlignSQL</h3><p data-i18n="project.alignsql">Qwen3-8B Text2SQL post-training from supervised fine-tuning through reinforcement learning.</p><div class="project-arrow" data-i18n="projects.view">View project ↗</div></a><a class="project-card" href="https://github.com/gzhzk/make-pindou-keepsakes-skill" target="_blank" rel="noopener"><div class="project-card-top"><i class="fas fa-layer-group"></i><span>CREATIVE SKILL</span></div><h3>Pindou Growth</h3><p data-i18n="project.pindou">A Codex skill that turns photos and memories into craftable fuse-bead keepsakes with adaptive grids, real palettes, and structural-growth GIFs.</p><div class="project-arrow" data-i18n="projects.view">View project ↗</div></a></div></section><div class="selected-writing-heading" id="selected-writing"><div class="section-kicker" data-i18n="writing.kicker">SELECTED WRITING</div><h2 data-i18n="writing.title">Notes from the path to AGI.</h2></div><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover"><a href="/2026/06/11/Thoughts_20260611/" title="多想、多做、边试、边学"><div class="post-bg" style="background: linear-gradient(135deg, #ff7452 0%, #ffb44a 100%)"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2026/06/11/Thoughts_20260611/" title="多想、多做、边试、边学">多想、多做、边试、边学</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-06-10T16:00:00.000Z" title="发表于 2026-06-11 00:00:00">2026-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Reflections/">Reflections</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Agent-Harness/">Agent Harness</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Post-Training/">Post-Training</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Engineering/">Engineering</a></span></div><div class="content">从 Agent Harness、Post-Training 和项目重构中学到的事：先跑起来不等于做对，AI 可以提方案，但判断的尺子必须在自己手里。</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2026/03/02/Transformer_main/" title="Transformer 核心架构逐层拆解"><img class="post-bg" src="/images/1/Transformer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Transformer 核心架构逐层拆解"></a></div><div class="recent-post-info"><a class="article-title" href="/2026/03/02/Transformer_main/" title="Transformer 核心架构逐层拆解">Transformer 核心架构逐层拆解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-03-01T16:00:00.000Z" title="发表于 2026-03-02 00:00:00">2026-03-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LLM-Fundamentals/">LLM Fundamentals</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Transformer/">Transformer</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Attention/">Attention</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/PyTorch/">PyTorch</a></span></div><div class="content">从 Self-Attention 出发，逐层拆解 Transformer 的编码器、缩放点积注意力、多头注意力、掩码与位置编码，配合公式、架构图和 PyTorch 实现。</div></div></div><div class="recent-post-item"><div class="post_cover"><a href="/2026/02/25/NLPtext/" title="NLP 文本表征：Word Embedding + Tokenizer + BPE 算法全解"><div class="post-bg" style="background: linear-gradient(135deg, #155eef 0%, #7c3aed 100%)"></div></a></div><div class="recent-post-info"><a class="article-title" href="/2026/02/25/NLPtext/" title="NLP 文本表征：Word Embedding + Tokenizer + BPE 算法全解">NLP 文本表征：Word Embedding + Tokenizer + BPE 算法全解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-02-24T16:00:00.000Z" title="发表于 2026-02-25 00:00:00">2026-02-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/LLM-Fundamentals/">LLM Fundamentals</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/NLP/">NLP</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Embedding/">Embedding</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Tokenizer/">Tokenizer</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/BPE/">BPE</a></span></div><div class="content">从 One-Hot、词袋和 TF-IDF 到 Word Embedding、Tokenizer 与 BPE，系统理解文本如何被映射到连续语义空间，并附完整代码实现。</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/fzd.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Zekai Huang</div><div class="author-info-description">Agent Harness · Post-Training · RLHF</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/gzhzk"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/gzhzk" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #181717;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Building systems, writing what survives contact with reality.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/06/11/Thoughts_20260611/" title="多想、多做、边试、边学"><div style="background: linear-gradient(135deg, #ff7452 0%, #ffb44a 100%)"></div></a><div class="content"><a class="title" href="/2026/06/11/Thoughts_20260611/" title="多想、多做、边试、边学">多想、多做、边试、边学</a><time datetime="2026-06-10T16:00:00.000Z" title="发表于 2026-06-11 00:00:00">2026-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/02/Transformer_main/" title="Transformer 核心架构逐层拆解"><img src="/images/1/Transformer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Transformer 核心架构逐层拆解"/></a><div class="content"><a class="title" href="/2026/03/02/Transformer_main/" title="Transformer 核心架构逐层拆解">Transformer 核心架构逐层拆解</a><time datetime="2026-03-01T16:00:00.000Z" title="发表于 2026-03-02 00:00:00">2026-03-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/25/NLPtext/" title="NLP 文本表征：Word Embedding + Tokenizer + BPE 算法全解"><div style="background: linear-gradient(135deg, #155eef 0%, #7c3aed 100%)"></div></a><div class="content"><a class="title" href="/2026/02/25/NLPtext/" title="NLP 文本表征：Word Embedding + Tokenizer + BPE 算法全解">NLP 文本表征：Word Embedding + Tokenizer + BPE 算法全解</a><time datetime="2026-02-24T16:00:00.000Z" title="发表于 2026-02-25 00:00:00">2026-02-25</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            
-          </div>
-          <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LLM-Fundamentals/"><span class="card-category-list-name">LLM Fundamentals</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Reflections/"><span class="card-category-list-name">Reflections</span><span class="card-category-list-count">1</span></a></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/NLP/" style="font-size: 1.15em; color: rgb(173, 56, 98);">NLP</a><a href="/tags/Embedding/" style="font-size: 1.15em; color: rgb(169, 186, 147);">Embedding</a><a href="/tags/Tokenizer/" style="font-size: 1.15em; color: rgb(50, 50, 117);">Tokenizer</a><a href="/tags/BPE/" style="font-size: 1.15em; color: rgb(128, 191, 145);">BPE</a><a href="/tags/Agent-Harness/" style="font-size: 1.15em; color: rgb(169, 52, 63);">Agent Harness</a><a href="/tags/Post-Training/" style="font-size: 1.15em; color: rgb(158, 116, 76);">Post-Training</a><a href="/tags/Engineering/" style="font-size: 1.15em; color: rgb(105, 172, 116);">Engineering</a><a href="/tags/Transformer/" style="font-size: 1.15em; color: rgb(50, 200, 50);">Transformer</a><a href="/tags/Attention/" style="font-size: 1.15em; color: rgb(125, 59, 105);">Attention</a><a href="/tags/PyTorch/" style="font-size: 1.15em; color: rgb(50, 160, 151);">PyTorch</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>归档</span>
-      
-    </div>
-  
-    <ul class="card-archive-list">
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2026/06/">
-            <span class="card-archive-list-date">
-              六月 2026
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2026/03/">
-            <span class="card-archive-list-date">
-              三月 2026
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2026/02/">
-            <span class="card-archive-list-date">
-              二月 2026
-            </span>
-            <span class="card-archive-list-count">1</span>
-          </a>
-        </li>
-      
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2026-02-23T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-23T13:16:38.274Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Zekai Huang</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="language-toggle" type="button" title="切换中英文" aria-label="切换中英文">EN</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly@5.5.4/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly@5.5.4/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.9/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/js/custom.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+
+
+
+
+
