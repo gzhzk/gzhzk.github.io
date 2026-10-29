@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gzhzk.github.io/sitemap.xml
+Sitemap: https://gzhzk.github.io/blogs/sitemap-index.xml
